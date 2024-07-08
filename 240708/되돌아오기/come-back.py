@@ -22,6 +22,6 @@ for i in range(n):
         if x == 0 and y == 0:
             print(time)
             break
-    
-    if i == n and x != 0 and y != 0:
+            
+    if i+1 == n and x != 0 and y != 0:
         print(-1)
