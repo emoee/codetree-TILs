@@ -6,7 +6,7 @@ def in_range(x, y):
     return 0 <= x and x < n and 0 <= y and y < n
 
 def move(x, y, n):
-    dxs, dys = [1, 0, -1, 0], [0, -1, 0, 1] # 상, 좌, 하, 우
+    dxs, dys = [1, 0, -1, 0], [0, -1, 0, 1] # 하, 좌, 상, 우
     nx, ny = x+dxs[n], y+dys[n]
     return nx, ny, n
 
