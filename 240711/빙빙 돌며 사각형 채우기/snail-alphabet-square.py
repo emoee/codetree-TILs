@@ -18,7 +18,7 @@ for i in range(1, n*m):
         dirNumber = (dirNumber+1) % 4
 
     x, y = x+dxs[dirNumber], y+dys[dirNumber]
-    number = ord('A') + i
+    number = ord('A') + (i % 26)
     board[x][y] = chr(number)
 
 for _ in board:
