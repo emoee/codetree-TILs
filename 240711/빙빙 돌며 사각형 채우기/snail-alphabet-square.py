@@ -1,4 +1,5 @@
 n, m = map(int, input().split())
+
 board = [[0]*m for _ in range(n)]
 
 dxs, dys = [0, 1, 0, -1],[1, 0, -1 , 0] # 우, 하, 좌, 상
@@ -8,7 +9,7 @@ number = ord('A')
 board[x][y] = chr(number)
 
 def in_range(x, y):
-    return 0 <= x and x < m and 0 <= y and y < n
+    return 0 <= x and x < n and 0 <= y and y < m
 
 for i in range(1, n*m):
     nx, ny = x+dxs[dirNumber], y+dys[dirNumber]
@@ -17,7 +18,8 @@ for i in range(1, n*m):
         dirNumber = (dirNumber+1) % 4
 
     x, y = x+dxs[dirNumber], y+dys[dirNumber]
-    board[x][y] = chr(number+i)
+    number = ord('A') + i
+    board[x][y] = chr(number)
 
 for _ in board:
     print(" ".join(map(str, _)))
