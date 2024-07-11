@@ -12,14 +12,12 @@ dirNumber = 0
 
 for i in range(2, n*m+1):
     nx, ny = x+dxs[dirNumber], y+dys[dirNumber]
-    if in_range(nx, ny):
-        x, y = nx, ny
-        board[x][y] = i
-    else:
+
+    if not in_range(nx, ny) or board[nx][ny] != 0:
         dirNumber += 1
-        nx, ny = x+dxs[dirNumber], y+dys[dirNumber]
-        x, y = nx, ny
-        board[x][y] = i
+
+    x, y = x+dxs[dirNumber], y+dys[dirNumber]
+    board[x][y] = i
 
 for _ in board:
     print(" ".join(map(str, _)))
