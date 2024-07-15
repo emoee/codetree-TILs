@@ -1,13 +1,19 @@
-a = int(input())
+# a = int(input())
 
 # print(int(str(a), 2))
 
-strA = list(str(a))
+strA = list(map(int, list(input())))
 
-maxValue = int(str(a), 2)
+maxValue = 0
 for i in range(1, len(strA)):
-    strA[i] = str(1 - int(strA[i]))
-    if int(''.join(strA)) > maxValue:
-        maxValue = int(''.join(strA))
+    strA[i] = 1 - strA[i]
 
-print(int(str(maxValue), 2))
+    num = 0
+    for j in range(len(strA)):
+        num = num * 2 + strA[j]
+    
+    maxValue = max(maxValue, num)
+
+    strA[i] = 1 - strA[i]
+
+print(maxValue)
