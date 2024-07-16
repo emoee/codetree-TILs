@@ -1,10 +1,11 @@
+import sys
 n = int(input())
 
 board = []
 for i in range(n):
     board.append(tuple(map(int, input().split())))
 
-minValue = 999
+minValue = sys.maxsize
 for check in range(1, n-1):
     sumValue = 0
     index = 0
