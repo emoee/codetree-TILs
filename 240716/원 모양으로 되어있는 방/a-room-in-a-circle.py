@@ -9,7 +9,7 @@ minValue = sys.maxsize
 for c in range(len(room)):
     sumValue = 0
     for i in range(len(room)):
-        sumValue += ((c+i)%5)*room[i]
+        sumValue += ((c+i)%n)*room[i]
  
     minValue = min(minValue, sumValue)
 
