@@ -15,7 +15,7 @@ for i in range(n):
     A.append(int(input()))
 
 
-maxValue = 0
+maxValue = -1
 
 for i in range(n-2):
     for j in range(i+1, n-1):
