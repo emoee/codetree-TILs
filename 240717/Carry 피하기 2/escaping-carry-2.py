@@ -28,7 +28,7 @@ for i in range(n-2):
             check = True
             
             while x and y and z:
-                if x.pop() + y.pop() + z.pop() > 10:
+                if x.pop() + y.pop() + z.pop() > 9:
                     check = False
                     break
             
