@@ -90,4 +90,5 @@ for i in range(n):
         break
 
 print(win)
-print(x, y)
+if win > 0:
+    print(x, y)
