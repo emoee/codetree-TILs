@@ -11,5 +11,5 @@ for i in range(n):
             board[i][j] += 1
             number += 1
         
-
-print(board)
+for b in board:
+    print(" ".join(map(str, b)))
