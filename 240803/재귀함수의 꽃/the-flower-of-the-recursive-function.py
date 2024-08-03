@@ -6,11 +6,6 @@ def printFlower(f):
 
     print(f, end=" ")
     printFlower(f-1)
-
-    if f == n:
-        print(f, end=" ")
-        return
-
     print(f, end=" ")
     
 printFlower(n)
