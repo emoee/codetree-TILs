@@ -2,8 +2,9 @@ n = int(input())
 A = list(map(int, input().split()))
 
 result = []
-for a in A:
+for i, a in enumerate(A):
     result.append(a)
-    if a%2 == 0:
+    result.sort()
+    if (i+1)%2 == 0:
         continue
-    print(result[len(result)//2], end= " ")
+    print(result[i//2], end= " ")
