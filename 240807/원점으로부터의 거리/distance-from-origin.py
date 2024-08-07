@@ -5,7 +5,7 @@ for i in range(n):
     m = abs(0-x) + abs(0-y)
     board.append((i+1,x,y,m))
 
-board.sort(key=lambda x: x[2])
+board.sort(key=lambda x: x[3])
 
 for b in board:
     print(b[0])
