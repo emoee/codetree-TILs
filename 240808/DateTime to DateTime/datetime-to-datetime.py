@@ -3,6 +3,9 @@ d, h, m  = map(int, input().split())
 ld, lh, lm = 11, 11, 11
 result = 0
 while 1:
+    if ld > d or (ld > d and lh > h) or (ld > d and ld > h and lm > m):
+        result = -1
+        break
     if ld == d and lh == h and lm == m:
         break
     
