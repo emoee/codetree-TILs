@@ -18,9 +18,8 @@ while True:
     else:
         day = (day-1)%7
         d1 -= 1
-        if d1 == months[m1]:
+        if d1 == 0:
             m1 -= 1
-            d1 = 1
-            day = (day-1)%7
+            d1 = months[m1]
 
 print(days[day])
