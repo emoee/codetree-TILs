@@ -1,8 +1,8 @@
 n = int(input())
 
-Rline = [0] * 200
-Lline = [0] * 200
-line = [""] * 200
+Rline = [0] * 201
+Lline = [0] * 201
+line = [""] * 201
 
 now = 100
 for i in range(n):
