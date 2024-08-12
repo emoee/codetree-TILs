@@ -10,15 +10,22 @@ for i in range(n):
     x = int(x)
 
     if c == "L":
-        for j in range(x):
-            now -= 1
+        while x > 0:
             line[now] = 1
             Lline[now] += 1
+
+            x -= 1
+            if x: 
+                now -= 1
     else:
-        for j in range(x):
+        while x > 0:
             line[now] = 2
             Rline[now] += 1
-            now += 1
+
+            x -= 1
+            if x: 
+                now += 1
+            
 
 gray, white, black = 0, 0, 0
 for k in range(2 * MAX_K + 1):
