@@ -6,4 +6,4 @@ for i in range(n):
     for j in range(x1, x2+1):
         board[j] += 1
 
-print(board)
+print(max(board))
