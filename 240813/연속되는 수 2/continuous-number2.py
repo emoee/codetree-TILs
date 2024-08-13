@@ -1,7 +1,7 @@
 n = int(input())
 
 line = [int(input()) for _ in range(n)]
-cnt = 0
+cnt = 1
 result = 0
 
 for i in range(1, n):
