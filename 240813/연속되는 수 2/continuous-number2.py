@@ -13,7 +13,7 @@ for i in range(n):
         result = max(result, cnt)
         cnt = 0
 
-if n <= 1:
+if n <= 1 or n == cnt:
     result = cnt
 
 print(result)
