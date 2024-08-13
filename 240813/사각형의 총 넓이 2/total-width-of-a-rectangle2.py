@@ -9,13 +9,7 @@ for i in range(n):
     y2 += 100
     for x in range(x1, x2):
         for y in range(y1, y2):
-            board[x][y] += 1
+            board[x][y] = 1
 
 area = sum(sum(row) for row in board)
-result = 0
-for i in range(201):
-    for j in range(201):
-        if board[i][j] > 1:
-            result += 1
-
-print(area-result)
+print(area)
