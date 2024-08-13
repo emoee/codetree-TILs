@@ -22,4 +22,6 @@ for i in range(1, n):
         cnt = 1
     result = max(result, cnt)
 
+if n < 2:
+    result = max(result, cnt)
 print(result)
