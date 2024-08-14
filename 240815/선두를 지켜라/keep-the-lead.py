@@ -1,5 +1,3 @@
-MAXT = 1000000
-
 n, m = map(int, input().split())
 
 A = []
@@ -25,7 +23,7 @@ result = 0
 pre = ''
 
 u = min(len(A), len(B))
-for i in range(1, u):
+for i in range(u):
     if A[i] > B[i]:
         now = 'A'
     elif A[i] < B[i]:
