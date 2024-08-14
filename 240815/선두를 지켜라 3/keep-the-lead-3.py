@@ -27,10 +27,11 @@ for i in range(len(A)):
         now = 'A'
     elif A[i] < B[i]:
         now = 'B'
-    
-    if A[i] == B[i] or (now != pre and pre != ''):
+    else:
+        now = 'AB'
+    if now != pre and pre != '':
         result += 1 
     pre = now 
 
 
-print(result-1)
+print(result)
