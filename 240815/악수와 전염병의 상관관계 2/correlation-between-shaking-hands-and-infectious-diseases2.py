@@ -12,8 +12,8 @@ time.sort()
 infect = [False] * N
 infect[P - 1] = True
 
-for k in range(K):
-    t, x, y = time[k]
+for i in range(min(K, len(time))):
+    t, x, y = time[i]
     if infect[x] or infect[y]:
         infect[x] = True
         infect[y] = True
