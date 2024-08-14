@@ -22,8 +22,14 @@ for i in range(m):
         b += 1
 
 result = 0
-for i in range(len(A)):
-    if A[i] < B[i]:
+for i in range(2, len(A)):
+    if A[i] == 0 and B[i] == 0:
+        break
+    elif A[i-1] > B[i-1] and A[i] > B[i]:
+        continue
+    elif A[i-1] < B[i-1] and A[i] < B[i]:
+        continue
+    else:
         result += 1
 
 print(result)
