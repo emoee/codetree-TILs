@@ -5,7 +5,7 @@ n, m = map(int, input().split())
 A = []
 B = []
 
-a, b = 1, 1
+a, b = 0, 0
 for i in range(n):
     v, t = map(int, input().split())
 
@@ -22,14 +22,10 @@ for i in range(m):
         B.append(b)
 
 result = 0
-now = ''
 pre = ''
 
 u = min(len(A), len(B))
 for i in range(1, u):
-    if A[i] == 0 and B[i] == 0:
-        break
-
     if A[i] > B[i]:
         now = 'A'
     elif A[i] < B[i]:
