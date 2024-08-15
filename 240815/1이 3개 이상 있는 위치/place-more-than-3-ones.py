@@ -8,8 +8,7 @@ board = [0] * n
 for i in range(n):
     board[i] = list(map(int, input().split()))
 
-maxValue = 0
-
+result = 0
 dxs, dys = [1, 0, -1, 0], [0, -1, 0, 1]
 
 for i in range(n):
@@ -20,6 +19,8 @@ for i in range(n):
             if in_range(nx, ny) and board[nx][ny] == 1:
                 cnt += 1
         
-        maxValue = max(maxValue, cnt)
+        if cnt >= 3:
+            result += 1
+        cnt = 0
 
-print(maxValue)
+print(result)
