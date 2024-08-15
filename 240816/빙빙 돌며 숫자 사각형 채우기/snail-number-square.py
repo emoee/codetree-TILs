@@ -5,7 +5,7 @@ def in_range(x, y):
 
 board = [[0]*m for _ in range(n)]
 
-dxs, dys = [0, 1, 0, -1], [-1, 0, 1, 0], 
+dxs, dys = [0, 1, 0, -1], [1, 0, -1, 0], 
 c, x, y = 0, 0, 0
 board[x][y] = 1
 
