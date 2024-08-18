@@ -12,10 +12,10 @@ for i in range(1, n + 1):
 
 for _ in range(3):
     for a, b in order:
-        person[a], person[b] = person[b], person[a]
-
         counts[person[a]].add(a)
         counts[person[b]].add(b)
+
+        person[a], person[b] = person[b], person[a]
 
 
 for c in range(1, n+1):
