@@ -5,52 +5,21 @@ board= [[0]*m for _ in range(n)]
 for i in range(n):
     board[i] = list(input())
 
-def right(x, y):
-    return board[x][y] == 'L' and board[x][y+1] == 'E' and board[x][y+2] == 'E'
-
-def left(x, y):
-    return board[x][y] == 'L' and board[x][y-1] == 'E' and board[x][y-2] == 'E'
-
-def top(x, y):
-    return board[x][y] == 'L' and board[x-1][y] == 'E' and board[x-2][y] == 'E'
-
-def bottom(x, y):
-    return board[x][y] == 'L' and board[x+1][y] == 'E' and board[x+2][y] == 'E'
-
-def diagonal(x, y):
-    if in_range(x+2, y+2) and board[x][y] == 'L' and board[x+1][y+1] == 'E' and board[x+2][y+2] == 'E':
-        return True
-    elif in_range(x-2, y-2) and board[x][y] == 'L' and board[x-1][y-1] == 'E' and board[x-2][y-2] == 'E':
-        return True
-    elif in_range(x+2, y-2) and board[x][y] == 'L' and board[x+1][y-1] == 'E' and board[x+2][y-2] == 'E':
-        return True  
-    elif in_range(x-2, y+2) and board[x][y] == 'L' and board[x-1][y+1] == 'E' and board[x-2][y+2] == 'E':
-        return True
-    else:
-        return False
-
-
 def in_range(x, y):
     return 0 <= x < n and 0 <= y < m
 
 count = 0
 
+dxs, dys = [0, 1, 0, -1, 1, -1, 1, -1], [1, 0, -1, 0, 1, -1, -1, 1]
+
 for x in range(n):
     for y in range(m):
-        if in_range(x, y+2) and right(x, y):
-            # print(x, y, 'r')
-            count += 1
-        if in_range(x, y-2) and left(x, y):
-            # print(x, y, 'l')
-            count += 1
-        if in_range(x-2, y) and top(x, y):
-            # print(x, y, 't')
-            count += 1
-        if in_range(x+2, y) and bottom(x, y):
-            # print(x, y, 'b')
-            count += 1
-        if diagonal(x, y):
-            # print(x, y, 'd')
-            count += 1
+        if in_range(x, y) and board[x][y] == "L":
+            for dx, dy in zip(dxs, dys):
+                nx, ny = x + dx, y + dy
+                if in_range(nx, ny) and board[nx][ny] == "E":
+                    tx, ty = nx + dx, ny + dy
+                    if in_range(tx, ty) and board[tx][ty] == "E":
+                        count += 1
 
 print(count)
