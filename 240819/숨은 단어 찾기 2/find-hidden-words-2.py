@@ -38,14 +38,19 @@ count = 0
 for x in range(n):
     for y in range(m):
         if in_range(x, y+2) and right(x, y):
+            # print(x, y, 'r')
             count += 1
         if in_range(x, y-2) and left(x, y):
+            # print(x, y, 'l')
             count += 1
         if in_range(x-2, y) and top(x, y):
+            # print(x, y, 't')
             count += 1
         if in_range(x+2, y) and bottom(x, y):
+            # print(x, y, 'b')
             count += 1
         if diagonal(x, y):
+            # print(x, y, 'd')
             count += 1
 
 print(count)
