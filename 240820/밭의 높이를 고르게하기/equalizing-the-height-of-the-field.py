@@ -2,7 +2,7 @@ n, h, t = map(int, input().split())
 
 numbers = list(map(int, input().split()))
 
-result = 200
+result = 200 * t
 for i in range(n-t+1):
     sumValue = 0
     for j in range(i, i+t):
