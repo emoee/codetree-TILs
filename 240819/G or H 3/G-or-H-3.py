@@ -1,7 +1,7 @@
 n, k = map(int, input().split())
 
 MAXV = 1000
-order = [0] * (MAXV+1)
+order = [0] * (MAXV * MAXV + 1)
 for i in range(n):
     l, c = map(str, input().split())
     if c == 'G': 
