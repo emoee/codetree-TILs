@@ -12,7 +12,7 @@ def in_range(x, y):
     return 0 <= x < n and 0 <= y < n
 
 for x in range(n):
-    for y in range(0, n, 2):
+    for y in range(0, n, 3):
         count = 0
         for dx, dy in zip(dxs, dys):
             nx, ny = x+dx, y+dy
