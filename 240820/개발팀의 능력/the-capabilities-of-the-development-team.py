@@ -12,9 +12,10 @@ for i in range(n):
 
                 maxTeam = max(teamA, teamB, teamC)
                 minTeam = min(teamA, teamB, teamC)
-                
-                if teamA != teamB or teamB != teamC or teamA != teamC:
+                # print(teamA, teamB, teamC)
+                if teamA != teamB and teamB != teamC and teamA != teamC:
                     result = min(result, maxTeam-minTeam)
+                    
 if result == sumNumbers:
     result = -1
 
