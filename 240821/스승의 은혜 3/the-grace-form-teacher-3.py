@@ -12,16 +12,13 @@ for i in range(n):
 
     for k in range(n):
         if i == k:
-            total = order[k][0]/2 + order[k][1]
+            test.append(order[k][0]/2 + order[k][1])
         else:    
             test.append(sum(order[k]))
     
     test.sort()
-    test.insert(0, total)
     
     for j in range(n):
-        if i == j:
-            continue
         price = test[j]
         if total + price <= b:
             total += price
