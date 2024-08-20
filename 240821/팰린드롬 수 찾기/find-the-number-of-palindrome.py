@@ -18,7 +18,7 @@ def check(number):
 count = 0
 for i in range(x, y+1):
     if check(i):
-        print(i)
+    #     print(i)
         count += 1
     
 print(count)
