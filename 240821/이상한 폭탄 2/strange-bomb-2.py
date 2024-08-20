@@ -8,8 +8,7 @@ for i in range(n):
 result = -1
 for i in range(n-1):
     for j in range(i+1, n):
-        if board[i] == board[j] and (j+1) - i > k:
-            for b in range(i, j+1):
-                result = max(result, board[b])
+        if board[i] == board[j] and (j+1) - i >= k:
+            result = max(result, board[i])
                 
 print(result)
