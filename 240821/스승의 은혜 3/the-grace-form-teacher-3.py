@@ -14,5 +14,5 @@ for i in range(n):
             total += price
         else:
             result = max(result, j)
-    result = max(result, j)
+
 print(result)
