@@ -4,15 +4,15 @@ sumNumbers = sum(numbers)
 result = sumNumbers
 for i in range(n):
     for j in range(i+1, n):
-        for k in range(j+1, n):
-            for l in range(k+1, n):
+        for k in range(n):
+            if k != i and k != j:
                 teamA = numbers[i] + numbers[j]
-                teamB = numbers[k] + numbers[l]
+                teamB = numbers[k]
                 teamC = sumNumbers - (teamA + teamB)
 
                 maxTeam = max(teamA, teamB, teamC)
                 minTeam = min(teamA, teamB, teamC)
-                # print(teamA, teamB, teamC)
+
                 if teamA != teamB and teamB != teamC and teamA != teamC:
                     result = min(result, maxTeam-minTeam)
                     
