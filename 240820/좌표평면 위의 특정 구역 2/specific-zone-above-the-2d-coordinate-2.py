@@ -5,7 +5,7 @@ line = [
 ]
 line.sort()
 
-value = 40001
+value = 40001*40001
 for i in range(n):
     x, x2, y, y2 = 40001, 0, 40001, 0
     for j in range(n):
@@ -17,10 +17,9 @@ for i in range(n):
 
         y = min(y, line[j][1])
         y2 = max(y2, line[j][1])
-
+    
     row = x2-x
     col = y2-y
-
     value = min(value, row*col)
 
 print(value)
