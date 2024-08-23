@@ -1,22 +1,23 @@
 n = int(input())
-text = list(input())
-result = [0] * n
+text = input()
+result = 1
 
-for i in range(n):
-    value = chr(ord(text[i])+1)
-    count = 1
-    for j in range(i+1, n):
-        if value == text[j]:
-            count += 1
-            value = chr(ord(text[j])+1)
-        else:
-            break
-    
-    result[i] = count
+for i in range(1, n):
+    twice = False
 
-result.sort()
+    for j in range(n - i + 1):
+        for k in range(j+1, n - i + 1):
+            same = True
 
-if result[-1] == result[-2]:
-    print(result[-3])
-else:
-    print(result[-1])
+            for l in range(i):
+                if text[j+l] != text[k+l]:
+                    same = False
+            
+            if same:
+                twice = True
+    if twice:
+        result = i + 1
+    else:
+        break
+
+print(result)
