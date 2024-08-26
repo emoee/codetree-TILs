@@ -9,7 +9,7 @@ MINV = find[0][0]
 MAXV = find[n-1][1]
 
 result = MAXV
-for i in range(MINV, MAXV+1):
+for i in range(MINV//2, MAXV+1):
     value = i
     check = True
     for a, b in find:
