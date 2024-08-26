@@ -14,7 +14,7 @@ def check(numbers, s, n, k):
                 index = i
     else:
         index = n-1
-    print(index)
+        
     return index
 
 
