@@ -1,28 +1,22 @@
 n, k = map(int, input().split())
 numbers = list(map(int, input().split()))
 
-result = numbers[0]
-start = 0
-end = n
+MAXV = max(numbers)
+result = MAXV
 
-def check(numbers, s, n, k):
-    index = s+1
-    if s+k < n:
-        c = numbers[s+1]
-        for i in range(s+1, s+k+1):
-            if numbers[i] < c:
-                index = i
-    else:
-        index = n-1
+def possible(maxV):
+    current = 0
+    while current < n - 1:
+        next_pos = -1
+        for j in range(1, k + 1):
+            if current + j < n and numbers[current + j] <= maxV:
+                next_pos = current + j
+        if next_pos == -1:
+            return False
+        current = next_pos
+    return True
 
-    return index
-
-
-while 1:
-    start = check(numbers, start, n, k)
-    result = max(result, numbers[start])
-
-    if start == n-1:
+for i in range(max(numbers[0], numbers[n - 1]), MAXV + 1):
+    if possible(i):
+        print(i)
         break
-
-print(result)
