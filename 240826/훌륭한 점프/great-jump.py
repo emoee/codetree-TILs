@@ -1,7 +1,7 @@
 n, k = map(int, input().split())
 numbers = list(map(int, input().split()))
 
-result = 0
+result = numbers[0]
 start = 0
 end = n
 
@@ -14,7 +14,7 @@ def check(numbers, s, n, k):
                 index = i
     else:
         index = n-1
-        
+
     return index
 
 
