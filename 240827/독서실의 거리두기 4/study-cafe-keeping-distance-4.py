@@ -12,8 +12,12 @@ def dist():
 result = 0
 for i in range(n):
     if students[i] == '0':
-        students[i] = '1'
-        result = max(result, dist())
-        students[i] = '0'
+        for j in range(i+1, n):
+            if students[j] == '0':
+                students[i] = '1'
+                students[j] = '1'
+                result = max(result, dist())
+                students[i] = '0'
+                students[j] = '0'
 
 print(result)
