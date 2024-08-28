@@ -14,10 +14,13 @@ for i in range(n):
             result[b] += 1
     
 maxValue = max(result)
-
 index = 0
-for i in range(len(result)):
-    if maxValue == result[i]:
-        index = i
+
+if maxValue == 0:
+    index = 0
+else:
+    for i in range(len(result)):
+        if maxValue == result[i]:
+            index = i
 
 print(index)
