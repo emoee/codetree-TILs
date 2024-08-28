@@ -4,24 +4,18 @@ heights = [
     int(input()) for _ in range(n)
 ]
 
-cost = 1000
+cost = 10000 * 10000
 
-maxIndex = heights.index(max(heights))
-minIndex = heights.index(min(heights))
+for low in range(0, 84):
+    high = low + 17
+    value = 0
 
-for i in range(1, 100):
-    heights[maxIndex] -= i
-    for j in range(1, 100):
-        heights[minIndex] += j
-        value = (i*i) + (j*j)
+    for height in heights:
+        if height > high:
+            value += (height-high) ** 2
+        elif height < low:
+            value += (low-height) ** 2
 
-        if 0 < heights[maxIndex] - heights[minIndex] < 18:
-            # print(i,j,value, heights)
-            cost = min(cost, value)
-
-        heights[minIndex] -= j
-
-    heights[maxIndex] += i 
+    cost = min(cost, value)
     
-
 print(cost)
