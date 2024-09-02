@@ -1,10 +1,11 @@
 a, b = map(int, input().split())
 c, d = map(int, input().split())
 
-if c < a or b < d:
-    x = min(a, c)
-    y = max(b, d)
+result = [0] * 101
 
-    print(abs(x-y))
-else:
-    print((b-a) + (d-c))
+for i in range(a, b):
+    result[i] = 1
+for i in range(c, d):
+    result[i] = 1
+
+print(sum(result))
