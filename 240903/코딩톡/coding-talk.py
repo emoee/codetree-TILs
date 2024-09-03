@@ -19,7 +19,7 @@ for i in range(number-1, 101):
     else:
         break
 
-answer = [""] * 26
+answer = [""] * 27
 U = talk[number-1][1]
 U = int(U)
 
@@ -28,4 +28,6 @@ if U > 0:
         if check[i] != 1:
             answer[i] = chr(i+65)
 
-print(" ".join(map(str, answer)).strip())
+for i in range(27):
+    if answer[i] != "":
+        print(answer[i], end=" ")
