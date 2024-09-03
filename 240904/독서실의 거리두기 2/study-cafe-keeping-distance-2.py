@@ -12,10 +12,10 @@ def findMax(seat):
                 break
             
             if seat[i] == '1' and seat[j] == '1':
-                if x != 0 and distance < (j-i):
+                if x == 0 and seat[x] == '0' and distance < (j-i) // 2:
                     distance = max(distance, j-i)
                     x, y = i, j
-                elif x == 0 and seat[x] == '0' and distance < (j-i) // 2:
+                elif distance < (j-i):
                     distance = max(distance, j-i)
                     x, y = i, j
                 break
