@@ -13,9 +13,13 @@ for i in range(number-1, 101):
     else:
         break
 
-answer = ""
-for i in range(person):
-    if check[i] != 1:
-        answer += chr(i+65) + " "
+answer = [""] * 26
+U = talk[number-1][1]
+U = int(U)
 
-print(answer)
+if U > 0:
+    for i in range(person):
+        if check[i] != 1:
+            answer[i] = chr(i+65)
+
+print(" ".join(map(str, answer)).strip())
