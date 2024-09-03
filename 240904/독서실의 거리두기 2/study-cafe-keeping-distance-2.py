@@ -6,26 +6,28 @@ def findMax(seat):
     x, y = 1000, 1000
     for i in range(n-1):
         for j in range(i+1, n):
-            if (seat[i] == '0' and i == 0) and seat[j] == '1':
-                distance = max(distance, j-i)
+            if seat[i] == '0' and i == 0 and seat[j] == '1':
+                distance = (j-i)
                 x, y = i, j
                 break
-            
+
             if seat[i] == '1' and seat[j] == '1':
-                if x == 0 and seat[x] == '0' and distance < (j-i) // 2:
-                    distance = max(distance, j-i)
+                if x == 0 and seat[x] == '0' and distance < ((j-i)//2):
+                    distance = (j-i)
                     x, y = i, j
+                elif x == 0 and seat[x] == '0' and distance > ((j-i)//2):
+                    break
                 elif distance < (j-i):
                     distance = max(distance, j-i)
                     x, y = i, j
                 break
 
             if seat[i] == '1' and (j == n-1 and seat[j] == '0'):
-                if x == 0 and seat[x] == '0' and distance < (j-i):
+                if y == 0 and seat[y] == '0' and distance < (j-i):
                     distance = max(distance, j-i)
                     x, y = i, j
-                elif distance // 2 < (j-i):
-                    distance = max(distance, j-i)
+                elif distance//2 < (j-i):
+                    distance = (j-i)
                     x, y = i, j
                 break
     return distance, x, y
