@@ -46,9 +46,9 @@ def findMin(seat):
     return distance, x, y
 
 d, a, b = findMax(seat)
-if a == 0:
+if a == 0 and seat[a] == '0':
     seat[a] = '1'
-elif b == n-1:
+elif b == n-1 and seat[b] == '0':
     seat[b] = '1'
 else:
     seat[(a+b)//2] = '1'
