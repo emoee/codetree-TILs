@@ -7,7 +7,7 @@ def findMax(seat):
     for i in range(n-1):
         for j in range(i+1, n):
             if seat[i] == '1' and (j == n-1 and seat[j] == '0'):
-                if distance < (j-i):
+                if distance//2 < (j-i):
                     distance = max(distance, j-i)
                     x, y = i, j
                 break
