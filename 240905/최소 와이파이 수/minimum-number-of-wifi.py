@@ -1,16 +1,13 @@
 n, m = map(int, input().split())
 wifi = list(map(int, input().split()))
 
-mid = m//2
-
 count = 0
-for i in range(mid, n-mid, m):
-    num = 0
-    for j in range(i-mid, (i+mid+1)):
-        if wifi[j] == 1:
-            num += 1
-    
-    if num > 0:
+position = 0
+while position < n:
+    if wifi[position] == 1:
         count += 1
+        position += 2 * m + 1
+    else:
+        position += 1
 
 print(count)
