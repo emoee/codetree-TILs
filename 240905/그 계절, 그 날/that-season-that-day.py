@@ -11,7 +11,7 @@ elif 9 > m > 5:
     season = "Summer"
 elif 12 > m > 8:
     season = "Fall"
-elif 0 < m < 3 or 11 < m < 13:
+elif m < 3 or m == 12:
     season = "Winter"
 else:
     season = -1
