@@ -1,15 +1,21 @@
 n, m = map(int, input().split())
 numbers = list(map(int, input().split()))
 
-from itertools import combinations 
-
-maxValue = 0
-k = n//m
-for i in range(0, n, k):
-    number = 0
-    for j in range(i, (i+k)): 
-        number += numbers[j]
+def findMaxValue(numbers):
+    for std in range(1, 100*100+1):
+        values = []
+        value = numbers[0]
+        for j in range(1, n):
+            if value + numbers[j] > std:
+                values.append(value)
+                value = numbers[j]
+            else:
+                value += numbers[j]
+        values.append(value)
     
-    maxValue = max(maxValue, number)
+        if len(values) <= m:
+            break
+    return max(values)
 
-print(maxValue)
+result = findMaxValue(numbers)
+print(result)
