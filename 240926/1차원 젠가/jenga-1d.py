@@ -11,7 +11,7 @@ endJenga = n
 for _ in range(2):
     s, e = map(int, input().split())
     for i in range(s-1, e):
-        jenga[i] = 0
+        jenga[endJenga-1-i] = 0
 
     for i in range(endJenga):
         if jenga[i] != 0:
