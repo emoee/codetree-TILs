@@ -39,17 +39,10 @@ while True:
     line, loop = bomb(line, endArray)
     bline, line, endArray, blank = down(bline, line, endArray, blank)
     line = bline
-
+    # print(line, endArray)
     if loop == False:
         break
 
-count = 0
-for i in range(n):
-    if line[i] != 0:
-        count += 1
-    else:
-        break
-
-print(count)
-for i in range(count):
+print(endArray)
+for i in range(endArray):
     print(line[i])
