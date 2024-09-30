@@ -18,25 +18,30 @@ def down(bline, line, endArray, blank):
     blank = 0
     return bline, line, endArray, blank
 
-start = 0
-for i in range(1, n):
-    check = line[start]
-    count = 0
-    for j in range(start, endArray):
-        if line[j] == check:
-            count += 1
-        else:
-            break
-    
-    if count >= m:
-        for j in range(count):
-            line[start+j] = 0
-        bline, line, endArray, blank = down(bline, line, endArray, blank)
-        line = bline
-        start = 0
-    else:
-        start += 1
-    count = 0
+def bomb(line, endArray):
+    loop = False
+    for i in range(n):
+        check = line[i]
+        count = 0
+        for j in range(i, endArray):
+            if line[j] == check:
+                count += 1
+            else:
+                break
+        
+        if count >= m:
+            loop = True
+            for j in range(count):
+                line[i+j] = 0
+    return line, loop
+
+while True:
+    line, loop = bomb(line, endArray)
+    bline, line, endArray, blank = down(bline, line, endArray, blank)
+    line = bline
+
+    if loop == False:
+        break
 
 count = 0
 for i in range(n):
