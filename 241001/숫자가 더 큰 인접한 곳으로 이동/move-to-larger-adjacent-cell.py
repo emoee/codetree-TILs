@@ -19,7 +19,7 @@ while True:
             px, py = nx, ny
             break
 
-    if px == 0:
+    if px == 0 and py == 0:
         break
 
     x, y = px, py
