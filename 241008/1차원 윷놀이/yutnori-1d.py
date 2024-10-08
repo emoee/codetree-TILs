@@ -15,9 +15,8 @@ def find(cnt):
 
     if cnt == n:
         return
-    print(board, ans)
+        
     for i in range(k):
-        print(board)
         if board[i] >= m:
             continue
         board[i] += gamelist[cnt]
