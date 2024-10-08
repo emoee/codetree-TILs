@@ -8,7 +8,9 @@ def Choose(cnt, start):
     global maxValue
 
     if cnt == m:
-        value = result[0] ^ result[1] ^ result[2]
+        value = result[0]
+        for j in range(1, m):
+            value ^= result[j]
         maxValue = max(maxValue, value)
         return
     
