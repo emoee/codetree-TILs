@@ -12,12 +12,15 @@ def inrange(x, y):
 
 def find(x, y):
     value = board[x][y]
-    dxs, dys = [0, 0, -1, 1], [-1, 1, 0, 0]
+    mx, my = x, y
+    dxs, dys = [-1, 1, 0, 0], [0, 0, -1, 1]
     for dx, dy in zip(dxs, dys):
         nx, ny = x+dx, y+dy
-        if inrange(nx,ny) and board[nx][ny] > value:
-            return nx, ny
-    return x, y
+        if inrange(nx, ny) and board[nx][ny] > value:
+            mx, my = nx, ny
+            value = board[nx][ny]
+
+    return mx, my
 
 def move(x, y):
     nx, ny = find(x, y)
@@ -31,9 +34,7 @@ for _ in range(t):
             if balls[i][j] == 1:
                 move(i, j)
 
-    for i in range(n):
-        for j in range(n):
-            balls[i][j] = next_balls[i][j]
+    balls = next_balls
 
     for i in range(n):
         for j in range(n):
