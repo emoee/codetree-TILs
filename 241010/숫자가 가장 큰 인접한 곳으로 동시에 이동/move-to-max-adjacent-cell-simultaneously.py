@@ -26,7 +26,7 @@ def move(x, y):
     nx, ny = find(x, y)
     next_balls[nx][ny] += 1
 
-for _ in range(t):
+for _ in range(t-1):
     next_balls = [[0]*n for _ in range(n)]
 
     for i in range(n):
