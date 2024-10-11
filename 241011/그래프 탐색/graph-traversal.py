@@ -16,4 +16,4 @@ def dfs(array):
             dfs(value)
 
 dfs(1)
-print(visited.count(True)-1)
+print(max(0, visited.count(True) - 1))
