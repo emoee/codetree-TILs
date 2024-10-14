@@ -13,16 +13,14 @@ def bfs():
     global road
     while queue:
         x, y = queue.popleft()
-        if x == n-1 and y == n-1:
-            return True
 
         dxs, dys = [-1, 1, 0, 0], [0, 0, -1, 1]
         for dx, dy in zip(dxs, dys):
             nx, ny = x+dx, y+dy
-            if inrange(nx, ny) and not visited[nx][ny] and board[nx][ny] != 1:
+            if inrange(nx, ny) and not visited[nx][ny] and board[nx][ny] != 1:    
+                road += 1
                 visited[nx][ny] = True
                 board[nx][ny] = road
-                road += 1
                 queue.append((nx,ny))
 
 answer = 0
@@ -31,8 +29,10 @@ for i in range(k):
     road = 0
     queue = deque()
     queue.append((x-1, y-1))
-
-    bfs()
+    if n > 1:
+        bfs()
+    else:
+        road = 1
     answer += road
 
 print(answer)
