@@ -9,4 +9,5 @@ dp[4] = 1
 for i in range(5, n+1):
     dp[i] = dp[i-2] + dp[i-3]
 
+print(dp)
 print(dp[n])
