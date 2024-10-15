@@ -13,14 +13,16 @@ def push(x, y, v):
 
 queue = deque()
 push(r1-1, c1-1, 0)
+answer = -1
 
 def bfs():
+    global answer
     dxs, dys = [-2, -2, -1, -1, 1, 1, 2, 2], [-1, 1, -2 , 2, -2, 2, -1, 1]
     while queue:
         x, y = queue.popleft()
 
         if x == r2-1 and y == c2-1:
-            break
+            answer = board[x][y]
 
         for dx, dy in zip(dxs, dys):
             nx, ny = x+dx, y+dy
@@ -28,4 +30,4 @@ def bfs():
                 push(nx, ny, board[x][y]+1)
 
 bfs()
-print(board[r2-1][c2-1])
+print(answer)
