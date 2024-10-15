@@ -3,12 +3,14 @@ from collections import deque
 n = int(input())
 r1, c1, r2, c2 = map(int, input().split())
 board = [[0]*n for _ in range(n)]
+visited = [[False]*n for _ in range(n)]
 
 def inrange(x, y):
     return 0 <= x < n and 0 <= y < n
 
 def push(x, y, v):
     board[x][y] = v
+    visited[x][y] = True
     queue.append((x, y))
 
 queue = deque()
@@ -26,7 +28,7 @@ def bfs():
 
         for dx, dy in zip(dxs, dys):
             nx, ny = x+dx, y+dy
-            if inrange(nx, ny):
+            if inrange(nx, ny) and not visited[nx][ny]:
                 push(nx, ny, board[x][y]+1)
 
 bfs()
