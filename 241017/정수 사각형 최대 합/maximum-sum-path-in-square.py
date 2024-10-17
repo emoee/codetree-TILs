@@ -3,7 +3,7 @@ board = [
     list(map(int, input().split()))
     for _ in range(n)
 ]
-dp = [[0]*3 for _ in range(n)]
+dp = [[0]*n for _ in range(n)]
 
 def init():
     for i in range(n):
