@@ -11,4 +11,6 @@ for num in numbers:
                 continue
             dp[i] = min(dp[i], dp[i-num]+1)
 
+if dp[m] == float('inf'):
+    dp[m] = -1
 print(dp[m])
