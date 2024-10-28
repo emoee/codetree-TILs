@@ -29,10 +29,11 @@ def findArea(mid):
 
     return count
 
-left, right = min(min(map(min, board)), 1), max(map(max, board))
+left, right = 1, max(map(max, board))
 k, answer = 100, 0
-while (left <= right):
-    mid = (left+right)//2
+
+while left <= right:
+    mid = (left + right) // 2
     result = findArea(mid)
 
     if result > answer:
@@ -41,7 +42,7 @@ while (left <= right):
     elif result == answer:
         k = min(k, mid)
 
-    if findArea(mid + 1) > result:
+    if result >= answer:
         left = mid + 1
     else:
         right = mid - 1
