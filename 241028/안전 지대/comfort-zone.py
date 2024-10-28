@@ -29,7 +29,7 @@ def findArea(mid):
 
     return count
 
-minValue, maxValue = min(map(min, board))-1, max(map(max, board))+1
+minValue, maxValue = min(map(min, board)), max(map(max, board))+1
 k, answer = 100, 0
 
 for i in range(minValue, maxValue):
