@@ -37,6 +37,6 @@ for i in range(1, maxValue):
     if result > answer:
         k, answer = i, result
     elif result == answer:
-        k = i
+        k = min(k, i)
 
 print(k, answer)
