@@ -6,7 +6,7 @@ while (1) {
     i++;
     n = parseInt(n/i);
 
-    if (parseInt(n/i) <= 1) 
+    if (n <= 1) 
         break  
 }
 
