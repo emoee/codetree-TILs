@@ -1,10 +1,10 @@
 const fs = require("fs");
 let n = Number(fs.readFileSync(0).toString().trim());
-let i = 1;
+let i = 0;
 
 while (1) {
-    n = n/i;
     i++;
+    n = n/i;
 
     if ((n/i) <= 1) 
         break  
