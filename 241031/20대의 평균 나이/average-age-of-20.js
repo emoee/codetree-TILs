@@ -7,7 +7,7 @@ while (1) {
     avg += Number(ages[i])
     i++;
     
-    if (Number(ages[i]) > 29)
+    if (Number(ages[i]) > 29 || i === ages.length)
         break
 }
 
