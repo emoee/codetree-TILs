@@ -4,9 +4,9 @@ let i = 0;
 
 while (1) {
     i++;
-    n = n/i;
+    n = parseInt(n/i);
 
-    if ((n/i) <= 1) 
+    if (parseInt(n/i) <= 1) 
         break  
 }
 
