@@ -6,7 +6,7 @@ let board2 = input.slice(n+1).map(b => b.trim().split(" ").map(Number));
 
 let answer = Array(n).fill(0).map(() => Array(m).fill(0));
 for (let i=0; i<n; i++) {
-    for (let j=0; j<n; j++) {
+    for (let j=0; j<m; j++) {
         if (board1[i][j] != board2[i][j]) {
             answer[i][j] = 1;
         }
